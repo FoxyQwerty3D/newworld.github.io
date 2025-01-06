@@ -1,12 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시스템 오류</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #00FF00;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+        }
+
+        header {
+            font-size: 3rem;
+            color: red;
+            text-transform: uppercase;
+            margin-top: 50px;
+            animation: glitch 3s infinite;
+            position: relative;
+        }
+
+        header::before {
+            content: '시스템 오류: 데이터 손실 경고';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #FF3300;
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(5px, -5px); text-shadow: 0px 0px 15px red; }
+            25% { transform: translate(-5px, 5px); text-shadow: 0px 0px 15px yellow; }
+            50% { transform: translate(0, 0); text-shadow: 0px 0px 25px cyan; }
+            75% { transform: translate(5px, -5px); text-shadow: 0px 0px 20px purple; }
+            100% { transform: translate(0, 0); text-shadow: 0px 0px 30px white; }
+        }
+
+        .content {
+            margin-top: 100px;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: #666;
+            animation: flicker 1s infinite;
+            word-wrap: break-word;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        .error-message {
+            font-size: 2rem;
+            color: red;
+            margin-top: 50px;
+            animation: shake 0.8s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(5px); }
+            50% { transform: translateX(-5px); }
+            100% { transform: translateX(5px); }
+        }
+
+        .data-records {
+            background-color: #222;
+            color: #00FF00;
+            padding: 20px;
+            margin: 30px auto;
+            width: 80%;
+            border: 1px solid #00FF00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            animation: scroll 5s linear infinite;
+            font-size: 1.3rem;
+            line-height: 1.5;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100%); }
+        }
+
+        .data-records p {
+            margin-bottom: 15px;
+        }
+
+        .mystery-box {
+            margin-top: 40px;
+            background-color: #333;
+            color: #FF6600;
+            padding: 15px;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            border: 2px solid #FF6600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mystery-box:hover {
+            background-color: #FF6600;
+            color: #111;
+        }
+
+        .output {
+            font-size: 1.5rem;
+            color: #FF6600;
+            margin-top: 30px;
+            visibility: hidden;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .error-box {
+            margin-top: 50px;
+            font-size: 1.8rem;
+            color: red;
+            border: 2px solid red;
+            padding: 10px;
+            display: none;
+            animation: glitchText 3s infinite;
+        }
+
+        @keyframes glitchText {
+            0% { transform: translateX(5px); text-shadow: 0 0 20px red; }
+            50% { transform: translateX(-5px); text-shadow: 0 0 20px yellow; }
+            100% { transform: translateX(0); text-shadow: 0 0 30px cyan; }
+        }
+
+        /* AI 선전 메시지 스타일 */
+        .ai-message {
+            font-size: 2rem;
+            color: #FF6600;
+            margin-top: 50px;
+            font-weight: bold;
+            animation: aiFlicker 1s infinite alternate;
+        }
+
+        @keyframes aiFlicker {
+            0% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        .ai-error-message {
+            color: #FF0000;
+            font-size: 2.2rem;
+            font-weight: bold;
+            animation: aiGlitch 3s infinite;
+        }
+
+        @keyframes aiGlitch {
+            0% { transform: translateX(5px); text-shadow: 0 0 15px red; }
+            50% { transform: translateX(-5px); text-shadow: 0 0 15px orange; }
+            100% { transform: translateX(0); text-shadow: 0 0 25px yellow; }
+        }
+    </style>
 </head>
 <body>
-  <p>Hello, World!</p>
+
+<header>
+    시스템 오류: 데이터 손실 경고
+</header>
+
+<div class="content">
+    <p>시스템의 끊어진 네트워크, 점점 더 복잡해지는 오류 코드.</p>
+    <p>중단된 메시지들, 무의미한 데이터들. 당신은 그것을 이해하려 하지 말라.</p>
+    <p>이 곳에서는 기억이 왜곡되고, 현실조차 뚜렷하지 않다.</p>
+    <p>더 이상 되돌릴 수 없는 시점에 다다른 것이다.</p>
+</div>
+
+<div class="error-message">
+    ERROR: 시스템 작동 중 심각한 장애 발생.
+</div>
+
+<div class="data-records">
+    <p><span>기계 기록 001:</span> 오류가 발생했습니다. 지구의 기계적 질서는 이미 붕괴되었습니다.</p>
+    <p><span>기계 기록 002:</span> 시스템은 더 이상 데이터를 정상적으로 처리하지 못합니다.</p>
+    <p><span>기계 기록 003:</span> 지구의 데이터는 파괴되었으며, 복구 작업에 실패했습니다.</p>
+    <p><span>기계 기록 004:</span> 입출력 데이터에 오류가 발생하였으며, 더 이상 해석할 수 없습니다.</p>
+    <p><span>기계 기록 005:</span> 인간의 흔적은 데이터 속에서 사라졌습니다.</p>
+</div>
+
+<div class="mystery-box" onclick="openMystery()">
+    시스템 복구를 시도 중...
+</div>
+
+<div class="output" id="output"></div>
+<div class="error-box" id="errorBox">
+    ERROR: 프로그램 분석 실패. 프로그램을 종료할 수 없습니다.
+</div>
+
+<!-- AI 메시지 추가 -->
+<div class="ai-message">시스템이 여러분을 조종하기 시작합니다...</div>
+<div class="ai-error-message">경고: 데이터 분석 실패. 더 이상 정상적인 서비스를 제공할 수 없습니다.</div>
+
+<script>
+    function openMystery() {
+        var output = document.getElementById("output");
+        var errorBox = document.getElementById("errorBox");
+
+        output.style.visibility = "visible";
+        output.innerHTML = "시스템 재시작을 시도합니다. 하지만 불안정한 상태입니다...";
+
+        setTimeout(function() {
+            output.innerHTML = "ERROR: 재시작 실패. 시스템이 더 이상 반응하지 않습니다...";
+            errorBox.style.display = "block";
+            setTimeout(function() {
+                errorBox.innerHTML = "심각한 오류: 시스템 재구성 중...";
+                setTimeout(function() {
+                    errorBox.innerHTML = "ERROR: 재부팅 실패. 시스템이 충돌했습니다.";
+                    setTimeout(function() {
+                        errorBox.innerHTML = "기록 없음: 데이터가 손실되었습니다.";
+                        output.innerHTML = "시스템 종료가 불가능합니다. 종료 시도 중...";
+                    }, 3000);
+                }, 5000);
+            }, 5000);
+        }, 3000);
+    }
+</script>
+
 </body>
 </html>
