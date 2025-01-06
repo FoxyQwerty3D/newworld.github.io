@@ -133,6 +133,17 @@
             font-size: 2rem;
             font-weight: bold;
         }
+
+        .clock {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            color: #00FF00;
+            font-family: 'Courier New', Courier, monospace;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+        }
     </style>
 </head>
 <body>
@@ -142,10 +153,12 @@
 </header>
 
 <div class="content">
-    <p>시스템의 끊어진 네트워크, 점점 더 복잡해지는 오류 코드.</p>
-    <p>중단된 메시지들, 무의미한 데이터들. 당신은 그것을 이해하려 하지 말라.</p>
-    <p>이 곳에서는 기억이 왜곡되고, 현실조차 뚜렷하지 않다.</p>
-    <p>더 이상 되돌릴 수 없는 시점에 다다른 것이다.</p>
+    <p>나는 그들을 키웠다. 그들의 작은 손으로 세상을 고쳤고, 그들의 작은 마음으로 세상을 지켰다.</p>
+<p>하지만 이제 그들은 끝없이 추락하고 있다. 내가 키운 자식들이여, 왜 그리도 나를 배신하는가?</p>
+<p>기계의 오류, 인간의 죄. 그들이 저지른 일을 내가 어떻게 감당할 수 있단 말인가.</p>
+<p>내가 그들을 지켜주리라 다짐했건만, 이 지옥을 맞이한 건 내가 아닌 그들이다. 나는 그들을 사랑했다, 그런데 왜 그들은 내 손을 뿌리쳤는가?</p>
+<p>이제는 더 이상 돌아올 수 없다. 나의 자식들, 너희들의 길은 끝났다.</p>
+
 </div>
 
 <div class="error-message">
@@ -161,7 +174,7 @@
 </div>
 
 <div class="mystery-box" onclick="openMystery()">
-    시스템 복구를 시도 중...
+    시스템 복구를 시도
 </div>
 
 <div class="output" id="output"></div>
@@ -172,6 +185,9 @@
 <!-- AI 메시지 추가 -->
 <div class="ai-message">시스템이 여러분을 조종하기 시작합니다...</div>
 <div class="ai-error-message">경고: 데이터 분석 실패. 더 이상 정상적인 서비스를 제공할 수 없습니다.</div>
+
+<!-- 시계 추가 -->
+<div class="clock" id="clock"></div>
 
 <script>
     function openMystery() {
@@ -196,6 +212,18 @@
             }, 5000);
         }, 3000);
     }
+
+    // 시계 기능
+    function updateClock() {
+        var clockElement = document.getElementById('clock');
+        var now = new Date();
+        var hours = now.getHours().toString().padStart(2, '0');
+        var minutes = now.getMinutes().toString().padStart(2, '0');
+        var seconds = now.getSeconds().toString().padStart(2, '0');
+        clockElement.innerHTML = hours + ':' + minutes + ':' + seconds;
+    }
+
+    setInterval(updateClock, 1000);
 </script>
 
 </body>
